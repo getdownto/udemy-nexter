@@ -1,0 +1,16 @@
+.features {
+    grid-column: center-start/center-end;
+    margin: 10rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+}
+
+.feature {
+    &-icon {
+        fill: $color-primary;
+        width: 3rem;
+        height: 3rem;
+    }
+}
