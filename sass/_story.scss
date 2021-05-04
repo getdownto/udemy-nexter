@@ -1,12 +1,40 @@
 .story {
     &-pictures {
-        background-color: $color-grey-light-1;
+        background-image: linear-gradient(rgba($color-primary, 0.6), rgba($color-primary, 0.6)), url('../img/back.jpg');
         grid-column: full-start/col-end 4;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        img {
+            width: 30vw;
+        }
+
+        
+        .floating {
+            position: absolute;
+            bottom: 3rem;
+            right: -3rem;
+            width: 27vw;
+            box-shadow: 0 2rem 5rem rgba(83, 83, 83, 0.329);
+        }
         
     }
 
     &-content {
-        background-color: $color-grey-dark-2;
+        display: flex;
+        flex-direction: column;
+        padding: 3vw 8vw;
+        background-color: $color-grey-light-1;
         grid-column: col-start 5/full-end;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &-text {
+        font-style: italic;
+        margin: 2rem 0;
     }
 }
