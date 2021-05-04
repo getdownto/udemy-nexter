@@ -14,6 +14,13 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+//RESPONSIVE DESIGM VARIABLES
+
+$bp-largest: 75em;
+$bp-large: 62.5em;
+$bp-medium: 50em;
+$bp-small: 37.5em;
+
 *,
 *::before,
 *::after {
@@ -24,17 +31,33 @@ $font-display: 'Josefin Sans', sans-serif;
 
 html {
     box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.2;
+
+    @media screen and (max-width: $bp-largest) {
+        font-size: 14px;
+    }
+
+    // @media screen and (max-width: $bp-small) {
+    //     font-size: 12px;
+    // }
 }
 
 body {
     font-family: $font-primary;
     color: $color-grey-dark-1;
-    font-size: 16px;
-    line-height: 1.2;
 }
 
 .container {
     display: grid;
     grid-template-rows: 90vh min-content 40vw repeat(3, min-content);
     grid-template-columns: 4rem [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(4rem, 1fr) [full-end] 4rem;
+
+    @media screen and (max-width: $bp-large) {
+        grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+    }
+
+    @media screen and (max-width: $bp-medium) {
+        grid-template-rows: 100vh min-content min-content 40vw repeat(3, min-content);
+    }
 }

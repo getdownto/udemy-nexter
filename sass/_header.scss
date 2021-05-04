@@ -1,12 +1,30 @@
 .header {
-    background: linear-gradient(rgba($color-secondary, 0.9), rgba($color-secondary, 0.9)), url(/img/hero.jpeg) center;
+    background: linear-gradient(
+            rgba($color-secondary, 0.9),
+            rgba($color-secondary, 0.9)
+        ),
+        url(/img/hero.jpeg) center;
     background-size: cover;
     grid-column: full-start/col-end 6;
-    padding: 2rem 5rem;
+    padding: 7rem 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media screen and (max-width: $bp-medium) {
+        grid-column: 1 / full-end;
+    }
 
     &-logo {
-        height: 3vw;
-        margin: 4vw 0;
+        height: 2vw;
+        // margin: 4vw 0;
+        margin-bottom: 4rem;
+
+        @media screen and (max-width: $bp-medium) {
+            height: 3vw;
+        }
     }
 
     &-seenon-text {
@@ -19,10 +37,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
 
         &:before,
         &:after {
-            content: '';
+            content: "";
             height: 1px;
             background-color: $color-grey-light-2;
             width: 40%;
@@ -37,8 +56,12 @@
         margin: 0 auto;
         img {
             height: 1.5vw;
-            margin-right: 1vw;
+            margin-right: 2.5vw;
             filter: brightness(70%);
+
+            @media screen and (max-width: $bp-medium) {
+                height: 2vw;
+            }
         }
     }
 }

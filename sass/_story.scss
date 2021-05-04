@@ -8,8 +8,18 @@
         align-items: center;
         position: relative;
 
+        @media screen and (max-width: $bp-medium) {
+            grid-column: 1/-1;
+            justify-content: flex-start;
+            padding-left: 6rem;
+        }
+
         img {
             width: 30vw;
+
+            @media screen and (max-width: $bp-medium) {
+                width: 45vw;
+            }
         }
 
         
@@ -19,6 +29,12 @@
             right: -3rem;
             width: 27vw;
             box-shadow: 0 2rem 5rem rgba(83, 83, 83, 0.329);
+
+            @media screen and (max-width: $bp-medium) {
+                top: 5rem;
+                right: 5rem;
+                width: 40vw;
+            }
         }
         
     }
@@ -31,6 +47,11 @@
         grid-column: col-start 5/full-end;
         justify-content: center;
         align-items: flex-start;
+
+        @media screen and (max-width: $bp-medium) {
+            grid-column: 1/-1;
+            padding: 3rem;
+        }
     }
 
     &-text {
